@@ -22,7 +22,8 @@ public class AddStudentCommand extends Command{
         System.out.println("Введите имя студента");
         String name = scanner.nextLine();
         try {
-            students.add(new Student(name, Main.idPool.remove()));
+            students.add(new Student(name, Main.idPool.first()));
+            Main.idPool.remove(Main.idPool.first());
             return "Студент был добавлен в список";
         }
         catch (NoSuchElementException e){

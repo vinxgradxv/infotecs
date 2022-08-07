@@ -17,7 +17,7 @@ public class Parser {
         if (words[0].equals("students")) {
             for (int i = 1; i < words.length; i += 4) {
                 res.add(new Student(words[i + 3], Integer.parseInt(words[i + 1])));
-                Main.idPool.remove();
+                Main.idPool.remove(Integer.parseInt(words[i + 1]));
             }
         }
         return res;

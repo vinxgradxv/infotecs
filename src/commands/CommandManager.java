@@ -24,7 +24,8 @@ public class CommandManager {
             System.out.println(command.execute(students));
         }
         else {
-            System.out.println("Такой команды не существует, введите номер от 1 до 5");
+            /*System.out.println("Такой команды не существует, введите номер от 1 до 5"); */
+            throw new NumberFormatException();
         }
     }
 

@@ -1,6 +1,7 @@
 package commands;
 
 import data.Student;
+import main.Main;
 import utils.FTPConnection;
 
 import java.util.InputMismatchException;
@@ -23,6 +24,7 @@ public class RemoveStudentCommand extends Command{
             int id = scanner.nextInt();
             for (int i = 0; i < students.size(); i++) {
                 if (students.get(i).getId() == id) {
+                    Main.idPool.add(students.get(i).getId());
                     students.remove(i);
                     return "Студент с id = " + id + " был удален из списка";
                 }

@@ -16,6 +16,7 @@ import java.net.UnknownHostException;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Scanner;
+import java.util.TreeSet;
 
 
 public class Main {
@@ -23,7 +24,8 @@ public class Main {
     private static String hostName;
     private static String login;
     private static String password;
-    public static PriorityQueue<Integer> idPool = new PriorityQueue<>();
+    /*public static PriorityQueue<Integer> idPool = new PriorityQueue<>(); */
+    public static TreeSet<Integer> idPool = new TreeSet<>();
     private static Parser jsonParser = new Parser();
     private static final int MAX_CAPACITY = 1000000;
     private static final Integer PORT = 21;
