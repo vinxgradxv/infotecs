@@ -10,6 +10,8 @@ public abstract class Command {
 
     protected FTPConnection ftpConnection;
 
+    protected boolean changedList = false;
+
     Command(FTPConnection ftpConnection) {
         this.ftpConnection = ftpConnection;
     }
@@ -21,6 +23,7 @@ public abstract class Command {
     public int getSerialNumber() {
         return serialNumber;
     }
+    public boolean isChangedList() {return changedList;}
 
     public abstract String execute(List<Student> students);
 }

@@ -26,6 +26,7 @@ public class RemoveStudentCommand extends Command{
                 if (students.get(i).getId() == id) {
                     Main.idPool.add(students.get(i).getId());
                     students.remove(i);
+                    changedList = true;
                     return "Студент с id = " + id + " был удален из списка";
                 }
             }

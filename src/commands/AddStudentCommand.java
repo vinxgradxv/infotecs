@@ -24,6 +24,7 @@ public class AddStudentCommand extends Command{
         try {
             students.add(new Student(name, Main.idPool.first()));
             Main.idPool.remove(Main.idPool.first());
+            changedList = true;
             return "Студент был добавлен в список";
         }
         catch (NoSuchElementException e){

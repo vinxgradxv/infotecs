@@ -21,17 +21,6 @@ public class ExitCommand extends Command{
 
     @Override
     public String execute(List<Student> students) {
-        String output = new Parser().fromStudentsListToJSON(students);
-        try {
-            File file = File.createTempFile("students", ".json");
-            FileOutputStream fos = new FileOutputStream(file);
-            fos.write(output.getBytes(StandardCharsets.UTF_8));
-            FileInputStream fis = new FileInputStream(file);
-            ftpConnection.establishConnection();
-            ftpConnection.getFTPClient().putFile("/htdocs/students.json", fis);
-        } catch (FtpProtocolException | IOException e) {
-            return "Не удалось сохранить изменения";
-        }
-        return "Все данные успешно сохранены, выполнение программы завершено";
+        return "Выполнение программы завершено";
     }
 }

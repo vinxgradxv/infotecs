@@ -3,6 +3,7 @@ package commands;
 import data.Student;
 import utils.FTPConnection;
 
+import java.util.Collections;
 import java.util.List;
 
 public class GetStudentsCommand extends Command{
@@ -19,6 +20,7 @@ public class GetStudentsCommand extends Command{
             return "В файле нет ни одного студента";
         }
         String res = "";
+        Collections.sort(students);
         for (Student student: students){
             res += student.toString() + "\n";
         }
