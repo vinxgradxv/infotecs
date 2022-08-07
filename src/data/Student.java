@@ -1,3 +1,5 @@
+package data;
+
 public class Student {
     private String name;
     private int id;
@@ -12,5 +14,10 @@ public class Student {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public String toString() {
+        return "id: " + id + ", name: " + name;
     }
 }
