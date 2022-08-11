@@ -9,8 +9,8 @@ import java.util.Scanner;
 
 public class FindByIdCommand extends Command{
 
-    public FindByIdCommand(FTPConnection ftpConnection) {
-        super(ftpConnection);
+    public FindByIdCommand() {
+
         description = "Получение информации о студенте по id";
         serialNumber = 2;
     }

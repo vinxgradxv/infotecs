@@ -13,8 +13,7 @@ import java.util.List;
 
 public class ExitCommand extends Command{
 
-    public ExitCommand(FTPConnection ftpConnection) {
-        super(ftpConnection);
+    public ExitCommand() {
         description = "Завершение работы";
         serialNumber = 5;
     }

@@ -10,8 +10,7 @@ import java.util.Scanner;
 
 public class AddStudentCommand extends Command{
 
-    public AddStudentCommand(FTPConnection ftpConnection) {
-        super(ftpConnection);
+    public AddStudentCommand() {
         description = "Добавление студента ( id генерируется автоматически)";
         serialNumber = 3;
     }

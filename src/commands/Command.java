@@ -8,13 +8,10 @@ import java.util.List;
 
 public abstract class Command {
 
-    protected FTPConnection ftpConnection;
+
 
     protected boolean changedList = false;
 
-    Command(FTPConnection ftpConnection) {
-        this.ftpConnection = ftpConnection;
-    }
     protected String description;
     protected int serialNumber;
     public String getDescription(){

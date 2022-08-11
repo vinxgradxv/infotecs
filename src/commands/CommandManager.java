@@ -20,11 +20,11 @@ public class CommandManager {
 
     public CommandManager(FTPConnection ftpConnection) {
         this.ftpConnection = ftpConnection;
-        commandList.add(new GetStudentsCommand(ftpConnection));
-        commandList.add(new FindByIdCommand(ftpConnection));
-        commandList.add(new AddStudentCommand(ftpConnection));
-        commandList.add(new RemoveStudentCommand(ftpConnection));
-        commandList.add(new ExitCommand(ftpConnection));
+        commandList.add(new GetStudentsCommand());
+        commandList.add(new FindByIdCommand());
+        commandList.add(new AddStudentCommand());
+        commandList.add(new RemoveStudentCommand());
+        commandList.add(new ExitCommand());
     }
 
     public void execute(Command command, List<Student> students) {
@@ -57,14 +57,16 @@ public class CommandManager {
         return commandList;
     }
 
-    private boolean updateServer(List<Student> students) {
+    public boolean updateServer(List<Student> students) {
         String output = new Parser().fromStudentsListToJSON(students);
         try {
             File file = File.createTempFile("students", ".json");
             FileOutputStream fos = new FileOutputStream(file);
             fos.write(output.getBytes(StandardCharsets.UTF_8));
             FileInputStream fis = new FileInputStream(file);
-            ftpConnection.establishConnection();
+            if (!ftpConnection.getFTPClient().isConnected()) {
+                ftpConnection.establishConnection();
+            }
             ftpConnection.getFTPClient().putFile("/htdocs/students.json", fis);
             System.out.println("Все данные на сервере актуализированы");
             return true;

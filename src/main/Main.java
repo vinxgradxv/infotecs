@@ -34,16 +34,13 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
-        /*System.out.println("Введите имя хоста:");
+        System.out.println("Введите имя хоста:");
         String hostName = console.next();
         System.out.println("Введите логин:");
         String login = console.next();
         System.out.println("Введите пароль:");
         String password = console.next();
-        */
-        hostName = "ftpupload.net";
-        login = "epiz_32313951";
-        password = "zi6b5YuiJgk";
+
 
         for (int i = 0; i < MAX_CAPACITY; i++) {
             idPool.add(i);
@@ -58,6 +55,7 @@ public class Main {
         }
         catch (FtpProtocolException | IOException e) {
             System.out.println("Ошибка аутентификации");
+            return;
         }
 
 
@@ -92,7 +90,7 @@ public class Main {
         }
     }
 
-    private static Command getCommandFromInput(String input) {
+    public static Command getCommandFromInput(String input) {
         List<Command> commands = commandManager.getCommandList();
         for (Command command : commands) {
             if (Integer.parseInt(input) == command.getSerialNumber()) {
@@ -108,7 +106,7 @@ public class Main {
 
      */
 
-    private static String getFileTextFromServer(String path) throws FtpProtocolException, IOException {
+    public static String getFileTextFromServer(String path) throws FtpProtocolException, IOException {
         InputStream is = ftpConnection.getFTPClient().getFileStream(path);
         InputStreamReader inputStreamReader = new InputStreamReader(is);
         String res = new String("");

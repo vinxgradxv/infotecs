@@ -10,8 +10,7 @@ import java.util.Scanner;
 
 public class RemoveStudentCommand extends Command{
 
-    public RemoveStudentCommand(FTPConnection ftpConnection) {
-        super(ftpConnection);
+    public RemoveStudentCommand() {
         description = "Удаление студента по id";
         serialNumber = 4;
     }

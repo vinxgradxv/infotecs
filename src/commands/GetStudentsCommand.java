@@ -8,8 +8,7 @@ import java.util.List;
 
 public class GetStudentsCommand extends Command{
 
-    public GetStudentsCommand(FTPConnection ftpConnection) {
-        super(ftpConnection);
+    public GetStudentsCommand() {
         description = "Получение списка студентов по имени";
         serialNumber = 1;
     }
