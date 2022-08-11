@@ -22,10 +22,8 @@ public class FTPConnection {
     public void establishConnection() throws FtpProtocolException, IOException {
         SocketAddress addr = new InetSocketAddress(hostName, PORT);
         ftp = FtpClient.create();
-        ftp = ftp.enablePassiveMode(false);
         ftp.connect(addr);
         ftp.login(login, password.toCharArray());
-        System.out.println(ftp.isPassiveModeEnabled());
     }
 
     public FtpClient getFTPClient(){

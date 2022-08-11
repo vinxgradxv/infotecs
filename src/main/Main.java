@@ -35,11 +35,11 @@ public class Main {
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
         System.out.println("Введите имя хоста:");
-        String hostName = console.next();
+        String hostName = console.nextLine();
         System.out.println("Введите логин:");
-        String login = console.next();
+        String login = console.nextLine();
         System.out.println("Введите пароль:");
-        String password = console.next();
+        String password = console.nextLine();
 
 
         for (int i = 0; i < MAX_CAPACITY; i++) {
