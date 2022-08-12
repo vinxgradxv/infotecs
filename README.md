@@ -34,6 +34,8 @@ chmod o+x test.jar
 
 java -jar test.jar
 
+Уже созданный jar файл находится в out/artifacts/infotecs_jar
+
 
 
 
